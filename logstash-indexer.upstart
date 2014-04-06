@@ -1,0 +1,13 @@
+description "logstash indexer server"
+ 
+start on runlevel [2345]
+stop on runlevel [06]
+ 
+# tell upstart we're creating a daemon
+# upstart manages PID creation for you.
+expect fork
+ 
+script
+  exec sudo /usr/share/logstash/bin/logstash agent -f /etc/logstash-indexer.conf &
+  emit logstash-indexer-server_running
+end script
