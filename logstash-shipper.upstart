@@ -1,4 +1,4 @@
-description "logstash indexer server"
+description "logstash shipper server"
  
 start on runlevel [2345]
 stop on runlevel [06]
@@ -8,6 +8,6 @@ stop on runlevel [06]
 expect fork
  
 script
-  exec sudo /usr/share/logstash/bin/logstash agent -f /etc/logstash-indexer.conf &
-  emit logstash-indexer-server_running
+  exec sudo /usr/share/logstash/bin/logstash agent -f /etc/logstash-shipper.conf &
+  emit logstash-shipper-server_running
 end script
