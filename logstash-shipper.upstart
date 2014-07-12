@@ -8,6 +8,6 @@ stop on runlevel [06]
 expect fork
  
 script
-  exec sudo /usr/share/logstash/bin/logstash agent -f /etc/logstash-shipper.conf &
+  exec sudo /opt/logstash/bin/logstash agent -f /etc/logstash-shipper.conf &
   emit logstash-shipper-server_running
 end script

@@ -8,6 +8,6 @@ stop on runlevel [06]
 expect fork
  
 script
-  exec sudo /usr/share/logstash/bin/logstash web &
+  exec sudo /opt/logstash/bin/logstash web &
   emit logstash-web-server_running
 end script
