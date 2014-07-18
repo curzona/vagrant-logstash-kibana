@@ -7,8 +7,9 @@ tar -zxvf logstash-1.4.0.tar.gz
 mv logstash-1.4.0 /opt/logstash
 
 wget https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-1.1.0.deb
-sudo dpkg -i elasticsearch-1.1.0.deb
-sudo service elasticsearch start
+dpkg -i elasticsearch-1.1.0.deb
+update-rc.d elasticsearch defaults 95 10
+/etc/init.d/elasticsearch start
 rm elasticsearch-1.1.0.deb
 
 cp /vagrant/logstash-shipper.conf /etc/logstash-shipper.conf
