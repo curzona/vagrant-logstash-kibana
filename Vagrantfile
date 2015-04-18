@@ -28,6 +28,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # elasticsearch
   config.vm.network :forwarded_port, guest: 9200, host: 9200
 
+  # logstash
+  config.vm.network :forwarded_port, guest: 5959, host: 5959
+  
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
   # Example for VirtualBox:
